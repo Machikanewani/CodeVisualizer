@@ -39,11 +39,11 @@ public class pyBoardView extends JPanel implements MouseListener{
 	    Rectangle2D shape = new Rectangle2D.Double(bHeight+bWidth*4,bHeight,bWidth*2,bHeight*2);
 	    Polygon spolygon = new Polygon(sX,sY,10);
 	    Polygon cpolygon = new Polygon(cX,cY,6);
-	    g2.setPaint(Color.blue);
+	    g2.setPaint(Color.white);
 	    g2.fill(shape);
-	    g2.setColor(Color.red);
+	    g2.setColor(Color.white);
 	    g2.fill(spolygon);
-	    g2.setColor(Color.yellow);
+	    g2.setColor(new Color(242, 247, 169));
 	    g2.fill(cpolygon);
 	    g2.setColor(Color.black);
 	    g2.setStroke(new BasicStroke(4.0f));

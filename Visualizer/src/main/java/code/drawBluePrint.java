@@ -8,6 +8,7 @@ public class drawBluePrint extends JPanel {
     private final ArrayList<ArrayList<String>> list;
     private static int cnt = 0;
     public drawBluePrint(ArrayList<ArrayList<String>> list){
+        this.setBackground(Color.white);
         this.list = list;
     }
 
@@ -35,6 +36,8 @@ public class drawBluePrint extends JPanel {
         int remainder = size % 5;
         if(remainder == 0) rows = size / 5;
         else rows = size / 5 + 1;
+
+        g.setFont(new Font(g.getFont().getFontName(), Font.ITALIC, g.getFont().getSize()));
 
         //get max value of row
         int rowMax = Integer.MIN_VALUE;
@@ -83,14 +86,22 @@ public class drawBluePrint extends JPanel {
                 int strWidth = g.getFontMetrics().stringWidth(list.get(j).get(0));
 
                 if(width < strWidth){
+                    g.setColor(Color.BLACK);
                     g.drawString(list.get(j).get(0), x, y);
                     int recX = x + (strWidth / 2) - (width / 2);
+                    g.setColor(new Color(100, 210, 200));
                     g.drawRect(recX, y + 4, width, height);
+                    g.setColor(new Color(180, 250, 240));
+                    g.fillRect(recX, y + 4, width, height);
                 }
                 else{
+                    g.setColor(Color.BLACK);
                     int strX = x + (width / 2) - (strWidth / 2);
                     g.drawString(list.get(j).get(0), strX, y);
+                    g.setColor(new Color(100, 210, 200));
                     g.drawRect(x, y + 4, width, height);
+                    g.setColor(new Color(180, 250, 240));
+                    g.fillRect(x, y + 4, width, height);
                 }
                 int xPlus = Math.max(width,strWidth);
                 x += widthSpace + xPlus;

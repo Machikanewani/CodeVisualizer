@@ -3,8 +3,7 @@ package code;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import java.awt.BorderLayout;
-import java.awt.Dimension;
+import java.awt.*;
 
 /**
  * layoutを設定してパネルを作成するクラス（Window表示）
@@ -25,6 +24,7 @@ public class pyFrame extends JFrame{
 		
 		//ウィンドウ内部を占有する「ベース」パネルを作成する
 		JPanel base = new JPanel();
+		base.setBackground(Color.white);
 		setContentPane(base);
 		base.setPreferredSize(new Dimension(900,300));//希望サイズの指定
 		setMinimumSize(new Dimension(600,200));//最小サイズの指定
